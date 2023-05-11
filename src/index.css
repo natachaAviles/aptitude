@@ -12,9 +12,45 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  --rotate-y: 180deg;
+}
+
+.game__title {
+  width: 229px;
+  height: 40px;
+  background: #D8E054;
+  border-radius: 25px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.game__button {
+  width: 240px;
+  height: 53px;
+  background: #A2F2F9;
+  border-width: 0px 0px 4px 4px;
+  border-style: solid;
+  border-color: #D8E054;
+  box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #233A59;
 }
 
 .container { 
+  display: grid;
+  place-items: center;
+}
+
+.game__content {
   display: grid;
   place-items: center;
 }
@@ -24,7 +60,6 @@
 	height: 1025px;
   padding: 0 72px;
   display: grid;
-  /* Set the number of columns based on the square root of the array length */
   grid-template-columns: repeat(4, 212px);
   grid-template-rows: repeat(3, 260px);
   gap: 16px;
@@ -38,6 +73,24 @@
   box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.2);
   padding: 16px;
   position: relative;
+  transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+  transform-style: preserve-3d;
+  transition: 150ms;
+  cursor: pointer;
+}
+
+.card--flipped {
+  --rotate-y: 0deg;
+  background-color: #A2F2F9;
+}
+
+.card__front, .card__back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card__back {
+  transform: rotateY(180deg); 
 }
 
 .card__title {
