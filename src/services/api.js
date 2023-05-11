@@ -12,7 +12,6 @@ export const loadCharacters = async () => {
 
     const characterPromises = [ ...randomIds].map( id => fetch(BASEURL + id))
     const responses = await Promise.all(characterPromises)
-    console.log(characterPromises)
     return await Promise.all(responses.map(res => res.json()))
 }
 
