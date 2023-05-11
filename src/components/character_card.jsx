@@ -2,10 +2,10 @@ import React from 'react';
 
 const CharacterCard = React.forwardRef((props) => {
 	const { onClick, isFlipped, character } = props
-	const { name, species, status, image } = character
+	const { name, species, status, image, matched } = character
 
   return (
-    <div onClick={onClick} className={`card ${isFlipped ? 'card--flipped' : ''}`}>
+    <div onClick={onClick} className={`card ${isFlipped ? 'card--flipped' : ''} ${matched ? 'card--matched' : ''}`}>
 			<div className='card__front'>
 				<img src={image} className='card__image' />
 				<p className='card__title'>{name}</p>

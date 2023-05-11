@@ -1,14 +1,18 @@
 import React from 'react';
-import { useState, useEffect, useRef, createRef } from 'react';
+import { useState, useEffect } from 'react';
 
-import CharacterCard from '../components/character_card';
 import { replayGame } from '../services/api';
+
+import HomeHeader from '../components/home_header';
+import Button from '../components/button';
+import Game from '../components/game';
 
 function HomePage () {
 	const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
 	const [selected, setSelected] = useState([])
-	const [turn, setTurns] = useState(null)
+	const [turns, setTurns] = useState(0)
+	const [points, setPoints] = useState(0)
 
 	useEffect(() => {
     async function fetchData() {
@@ -20,32 +24,42 @@ function HomePage () {
         console.error('Error fetching data:', error)
       }
     }
-
     fetchData()
   }, [])
 
 	const flipCard = (index, character) => {
+		if (character.matched || selected.length > 1) return
+
 		setSelected(prevState => {
-      if (prevState.length > 1) {
-        return prevState;
-      } else {
-				const { name } = character
-        return [...prevState, {name, index}];
-      }
+      const { name } = character
+      return [...prevState, {name, index}];
     })
 
 		const foundObject = selected.some(item => item.name === character.name)
 
-		if (!foundObject && selected.length <= 1) {
+		if (!foundObject && selected.length === 1) {
 			setTimeout(() => {
 				setSelected([])
 			}, 1000);
 		} else if (foundObject) {
 			setTimeout(() => {
-				setData(prevState => prevState.filter(item => item.name !== character.name));
-			}, 1000);
+				setData(prevData => {
+					return prevData.map(item => {
+						if (item.name === character.name) {
+							setPoints(points + 1)
+							return {
+								...item,
+								matched: true,
+							}
+						} else {
+							setTurns(turns + 1)
+							setSelected([])
+						}
+						return item
+					});
+				});
+			}, 1000)
 		}
-		
 	}
 
   return (
@@ -53,17 +67,11 @@ function HomePage () {
 			<img src='src/assets/logo.png' />
 			<div className='game__title'>Juego de memoria</div>
       <div className='container-content'>
-			 {data?.map((character, _index) => {
-				return (
-						<CharacterCard
-						key={_index} 
-						character={character} 
-						onClick={() => flipCard(_index, character)}
-						isFlipped={selected.some(item => item.index === _index)}
-					/>
-				 )
-			 })}
-			 <button className='game__button'>Jugar</button>
+				<HomeHeader turns={turns} points={points} />
+			 	<Game characters={data} selected={selected} flipCard={flipCard} />
+			<div className='game-button__container'>
+				<Button text='Jugar' />
+			</div>
 	  	</div>
     </div>
   );

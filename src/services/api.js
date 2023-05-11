@@ -4,7 +4,7 @@ const CHARACTER_QUANTITY = 6
 
 export const loadCharacters = async () => {
     const randomIds = new Set()
-    console.log('hola')
+
     while (randomIds.size < CHARACTER_QUANTITY) {
       const randomNumber = Math.ceil(Math.random() * CHARACTERS_API_COUNT)
       randomIds.add(randomNumber)

@@ -15,6 +15,10 @@
   --rotate-y: 180deg;
 }
 
+.body {
+  margin: 0;
+}
+
 .game__title {
   width: 229px;
   height: 40px;
@@ -27,6 +31,12 @@
   display: grid;
   align-items: center;
   justify-items: center;
+}
+
+.game-button__container {
+  justify-items: center;
+  display: grid;
+  margin-bottom: 23px;
 }
 
 .game__button {
@@ -57,19 +67,36 @@
 
 .container-content {
 	background-color: #FFFAC2;
-	height: 1025px;
+	height: 100%;
   padding: 0 72px;
+  border-radius: 16px 16px 0px 0px;
+}
+
+.game {
   display: grid;
   grid-template-columns: repeat(4, 212px);
   grid-template-rows: repeat(3, 260px);
   gap: 16px;
-  border-radius: 16px 16px 0px 0px;
+  margin-bottom: 48px;
+}
+
+.title, .game__header {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.game__header {
+  display: flex;
+  justify-content: space-between; /* Align items to the beginning and end */
+  align-items: center;
 }
 
 .card {
   border-radius: 8px;
   padding: 16px;
-  background-color: white;
+  background-color: #A2F2F9;
   box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.2);
   padding: 16px;
   position: relative;
@@ -81,7 +108,11 @@
 
 .card--flipped {
   --rotate-y: 0deg;
-  background-color: #A2F2F9;
+  background-color: white;
+}
+
+.card--matched > .card__back {
+  display: none;
 }
 
 .card__front, .card__back {
@@ -90,7 +121,7 @@
 }
 
 .card__back {
-  transform: rotateY(180deg); 
+  transform: rotateY(180deg);
 }
 
 .card__title {
