@@ -1,0 +1,21 @@
+.game-button__container {
+	justify-items: center;
+	display: grid;
+	margin-bottom: 23px;
+}
+  
+.game__button {
+	width: 240px;
+	height: 53px;
+	background: #A2F2F9;
+	border-width: 0px 0px 4px 4px;
+	border-style: solid;
+	border-color: #D8E054;
+	box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	font-size: 24px;
+	line-height: 29px;
+	text-align: center;
+	letter-spacing: 0.1em;
+	color: #233A59;
+}
