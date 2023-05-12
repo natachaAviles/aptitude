@@ -17,9 +17,12 @@ export const loadCharacters = async () => {
 
 export const replayGame = async () => {
   const characters = await loadCharacters()
-  const constitutedCharacters = [...characters, ...characters]
 
-  const sortedCharacters = constitutedCharacters.sort(_ => Math.random() - 0.5)
+  const charactersData = [...characters, ...characters]
 
-  return sortedCharacters
+  const charactersData1 = charactersData.slice();
+
+  charactersData1.sort((a, b) => a['name'] === b['name'] ? 0 : a['name'] < b['name'] ? -1 : 1)
+
+  return charactersData1
 }

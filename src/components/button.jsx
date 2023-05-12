@@ -1,11 +1,11 @@
 import React from 'react';
 
 function Button (props) {
-	const { onClick, text, type } = props
+	const { onClick, text, secondary } = props
 
   return (
-    <button onClick={onClick} className='game__button'>{text}</button>
-  );
+    <button onClick={onClick} className={`button ${secondary ? 'button--secondary' : ''}`}>{text}</button>
+  )
 }
 
-export default Button;
+export default Button

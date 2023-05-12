@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CharacterCard = React.forwardRef((props) => {
+const CharacterCard = (props) => {
 	const { onClick, isFlipped, character } = props
 	const { name, species, status, image, matched } = character
 
@@ -16,6 +16,6 @@ const CharacterCard = React.forwardRef((props) => {
 			</div>
     </div>
   );
-})
+}
 
 export default CharacterCard;
