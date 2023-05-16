@@ -1,4 +1,6 @@
 .score {
+	height: 100vh;
+
 	h1 {
 		font-size: 48px;
 		line-height: 59px;
@@ -14,7 +16,9 @@
 
 	.buttons {
 		display: flex;
-		justify-content: space-between; /* Align items to the beginning and end */
+		justify-content: space-between;
 		align-items: center;
+		gap: 54px;
+		margin-top: 72px;
 	}
 }

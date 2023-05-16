@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const CharacterCard = (props) => {
 	const { onClick, isFlipped, character } = props
@@ -15,7 +15,7 @@ const CharacterCard = (props) => {
 				<img src='src/assets/back_card.png' />
 			</div>
     </div>
-  );
+  )
 }
 
-export default CharacterCard;
+export default CharacterCard

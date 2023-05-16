@@ -1,8 +1,24 @@
-import Home from './pages/home'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-function App() {
+import Layout from './layouts/layout'
+import HomePage from './pages/home_page'
+import GamePage from './pages/game_page'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomePage />,
+  }, {
+    path: 'game',
+    element: <GamePage />
+  }
+])
+
+function App({routes}) {
   return (
-    <Home />
+    <Layout>
+      <RouterProvider router={router}/>
+    </Layout>
   )
 }
 

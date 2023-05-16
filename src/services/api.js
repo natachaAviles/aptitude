@@ -20,7 +20,7 @@ export const replayGame = async () => {
 
   const charactersData = [...characters, ...characters]
 
-  const charactersData1 = charactersData.slice();
+  const charactersData1 = charactersData.slice()
 
   charactersData1.sort((a, b) => a['name'] === b['name'] ? 0 : a['name'] < b['name'] ? -1 : 1)
 

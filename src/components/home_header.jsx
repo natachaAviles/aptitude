@@ -1,17 +1,19 @@
-import React from 'react';
+import React from 'react'
 
 function HomeHeader (props) {
-	const { turns, points } = props
+	const { turns, points, type } = props
 
   return (
-    <>
-			<h1 className='title'>Personajes</h1>
-			<div className='game__header'>
-				<p>Aciertos: {points}</p>
-				<p>Turnos: {turns}</p>
-			</div>
-    </>
-  );
+		<div style={{ with: '100%'}} className='game__header'>
+			{type !== 'game' ? 
+				<p className='title'>Personajes</p>
+				: <>
+					<p>Aciertos: {points}</p>
+					<p>Turnos: {turns}</p>
+				</>
+			}
+		</div>
+  )
 }
 
-export default HomeHeader;
+export default HomeHeader

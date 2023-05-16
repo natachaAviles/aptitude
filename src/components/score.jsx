@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import Button from './button';
+import Button from './button'
 
 function Score (props) {
 	const { turns } = props
