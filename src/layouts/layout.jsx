@@ -3,14 +3,14 @@ import React from 'react'
 import LayoutHeader from '../components/layout_header'
 
 const Layout = (props) => {
-	const { children } = props
+  const { children } = props
 
-	return (
-		<div className='container'>
-			<LayoutHeader/>
+  return (
+    <div className='container'>
+      <LayoutHeader />
       <div className='container-content'>
-				{children}
-	  	</div>
+        {children}
+      </div>
     </div>
   )
 }
