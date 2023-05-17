@@ -23,6 +23,8 @@ Memory game with characters from Rick and Morty by consuming the API located at 
 - Main View: Display a list of Rick and Morty characters.
 - Game View: Memory game with a 3x4 grid of character cards, a correct guesses counter, and a turns counter.
 - Game logic: Shuffle cards, show cards for 3 seconds, compare selected cards, keep track of correct guesses and turns, and display game over message.
+- Every time a card gets matched the card will turn unselectable. 
+- Game over message displays two buttons, Repetir (will reinitiate the game), Inicio (will redirect to home view)
 
 ## Getting Started
 
