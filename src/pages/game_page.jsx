@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 import Game from '../components/game'
@@ -20,6 +19,14 @@ function GamePage() {
 			randomize()
 		}
 	}, [locationData])
+
+	const handleStartAgain = () => {
+		setData([])
+    setSelected([])
+    setTurns(0)
+    setPoints(0)
+    randomize()
+	}
 
 	const randomize = () => {
 		const newData = [...locationData]
@@ -78,7 +85,7 @@ function GamePage() {
   return (
 		<>
 			{isGameFinished ?
-				<Score turns={turns} points={points} />
+				<Score turns={turns} points={points} handleStartAgain={handleStartAgain} />
 				: <Game type='game' characters={data} selected={selected} flipCard={flipCard} turns={turns} points={points} />
 			}
 		</>

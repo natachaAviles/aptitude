@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { replayGame } from '../services/api'
@@ -13,7 +12,7 @@ function HomePage () {
 	const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
 
-	const navigate = useNavigate();
+	const navigate = useNavigate()
 
 	useEffect(() => {
     async function fetchData() {
