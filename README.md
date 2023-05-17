@@ -4,7 +4,6 @@
 
 Rick and Morty memory game
 
-![My Photo](src/assets/preview_game.png)
 ## Table of Contents
 
 - [About](#about)
@@ -16,6 +15,8 @@ Rick and Morty memory game
 ## About
 
 Memory game with characters from Rick and Morty by consuming the API located at https://rickandmortyapi.com/.
+
+![My Photo](src/assets/preview_game.png)
 
 ## Features
 
