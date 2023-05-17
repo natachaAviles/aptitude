@@ -14,10 +14,10 @@ const router = createBrowserRouter([
   }
 ])
 
-function App({routes}) {
+function App({ routes }) {
   return (
     <Layout>
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </Layout>
   )
 }
