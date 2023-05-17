@@ -1,10 +1,10 @@
 import React from 'react'
 
-function HomeHeader(props) {
+function GameHeader(props) {
   const { turns, points, type } = props
 
   return (
-    <div style={{ with: '100%' }} className='game__header'>
+    <div className='game__header'>
       {type !== 'game' ?
         <p className='title'>Personajes</p>
         : <>
@@ -16,4 +16,4 @@ function HomeHeader(props) {
   )
 }
 
-export default HomeHeader
+export default GameHeader
