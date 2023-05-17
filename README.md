@@ -3,6 +3,8 @@
 # Project Name
 
 Rick and Morty memory game
+
+![My Photo](src/assets/preview_game.png)
 ## Table of Contents
 
 - [About](#about)
