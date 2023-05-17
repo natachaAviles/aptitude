@@ -26,6 +26,17 @@ Memory game with characters from Rick and Morty by consuming the API located at 
 - Every time a card gets matched the card will turn unselectable. 
 - Game over message displays two buttons, Repetir (will reinitiate the game), Inicio (will redirect to home view)
 
+### This project uses the following technologies:
+
+- React: A JavaScript library for building user interfaces.
+- React Router DOM: A library for routing in React applications.
+- LocalForage: A library for offline data storage in web browsers.
+- Match-sorter: A utility library for sorting and filtering lists.
+- Sort-by: A utility library for sorting arrays of objects.
+- Vite: A fast development server and build tool for modern web applications.
+- Sass: A CSS preprocessor that adds features like variables, mixins, and nested selectors.
+- Vite plugins: Various Vite plugins and dependencies for supporting React and TypeScript development.
+
 ## Getting Started
 
 ### Prerequisites
@@ -72,6 +83,7 @@ npm run dev
 │   ├── services/
 │   ├── main.jsx
 │   ├── utils.js
+|   ├── constants.js
 │   └── App.jsx
 ├── tests/
 ├── .gitignore
