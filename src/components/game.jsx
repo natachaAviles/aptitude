@@ -1,7 +1,7 @@
 import React from 'react'
 
 import CharacterCard from './character_card'
-import GameHeader from './home_header'
+import GameHeader from './game_header'
 
 function Game(props) {
   const { characters, selected, flipCard, turns, points, type } = props
