@@ -4,7 +4,12 @@ function Button (props) {
 	const { onClick, text, secondary } = props
 
   return (
-    <button onClick={onClick} className={`button ${secondary ? 'button--secondary' : ''}`}>{text}</button>
+    <button
+      onClick={onClick}
+      className={`button ${secondary ? 'button--secondary' : ''}`}
+    >
+      {text}
+    </button>
   )
 }
 
