@@ -7,7 +7,8 @@ const CharacterCard = (props) => {
   const { name, species, status, image, matched } = character
 
   return (
-    <div onClick={onClick}
+    <div
+        onClick={onClick}
         className={getClassModifiers('card', { flipped: isFlipped, matched })}>
       <div className='card__front'>
         <img src={image} className='card__image' />
